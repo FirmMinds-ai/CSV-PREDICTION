@@ -1,12 +1,10 @@
-import plotly.express as px
+
 from PIL import Image
 import streamlit as st
-import pickle
-import os
-import numpy as np
+
+
 import pandas as pd
-import seaborn as sns
-from matplotlib import pyplot as plt
+
 
 # outer join for nonactive customers
 all_customers_df = pd.DataFrame(
@@ -455,7 +453,7 @@ if page == "Health Entities Classification":
 
             PA_customer = pd.merge(
                 PA_df_sum, PA_df_count, on='Customer', how="outer")
-            #co_df.Total_price_of_confirmed_orders.fillna(value=0, inplace=True)
+            # co_df.Total_price_of_confirmed_orders.fillna(value=0, inplace=True)
 
             PA_customer = pd.merge(
                 PA_customer, customers_co2, on='Customer', how="outer")
@@ -501,7 +499,7 @@ if page == "Health Entities Classification":
             ARO_df = track_df.loc[track_df['From Status'].isin(
                 ARO_status) & track_df['To Status'].isin(ARO_to_status)]
 
-            #df["text"] = df["text"].astype(str)
+            # df["text"] = df["text"].astype(str)
             ARO_df["Status Created"] = ARO_df["Status Created"].apply(
                 lambda x: x.replace("/", "-"))
             ARO_df["Status Closed"] = ARO_df["Status Closed"].apply(
@@ -538,14 +536,14 @@ if page == "Health Entities Classification":
 
             ARO_customer = pd.merge(
                 ARO_customer_sum, ARO_customer_count, on='Customer', how="outer")
-            #co_df.Total_price_of_confirmed_orders.fillna(value=0, inplace=True)
+            # co_df.Total_price_of_confirmed_orders.fillna(value=0, inplace=True)
 
             ARO_customer = pd.merge(
                 ARO_customer, all_customers_df, on='Customer', how="outer")
 
             ARO_customer.columns = ['Customer', 'sum', 'Count']
             # st.dataframe(ARO_customer)
-            #pd.to_numeric(ARO_customer['sum'], downcast = 'integer')
+            # pd.to_numeric(ARO_customer['sum'], downcast = 'integer')
             ARO_customer['average_ARO'] = (
                 ARO_customer['sum'] / ARO_customer['Count'])
 
@@ -586,7 +584,7 @@ if page == "Health Entities Classification":
 
             KPIs_dataset["Degree_out_of_100"] = KPIs_dataset.apply(
                 lambda row: row['CO_KPI': 'KPI_Degree_ARO'].sum(), axis=1)
-            #KPIs_dataset.loc[KPIs_dataset['Customer'].str.contains('King Abdulaziz Medical City- NGHA R')]
+            # KPIs_dataset.loc[KPIs_dataset['Customer'].str.contains('King Abdulaziz Medical City- NGHA R')]
 
             KPIs_dataset.sort_values(
                 "Degree_out_of_100", axis=0, ascending=False, inplace=True, na_position='last')
