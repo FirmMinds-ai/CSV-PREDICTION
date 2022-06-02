@@ -239,20 +239,39 @@ st.sidebar.text("")
 img = Image.open("nupco logo.png")
 st.sidebar.image(img)
 
-l = ['Prince Sultan Military Medical City', 'Security Forces Hospitals',
-     'NGHA - Jeddah', 'King Abdulaziz Medical City- NGHA R',
-     'Prince Sultan Cardiac Center',
-     'King Salman Armed Forces Hospital',
-     'KFSHRC-RUH:King Faisal Speciality', 'Jazan Health Affairs',
-     'Alhada Armed Forces Hospital',
-     'KFSHRC-JED : King Faisal Speciality',
-     'King Fahad Hospital - Dammam', 'MODA/KFAFH - Jeddah',
-     'King Fahad Medical City', 'King Fahad Military Medical Complex',
-     'Jeddah Health Affairs', 'KING ABDULLAH MEDICAL CITY – MAKKAH',
-     'King Saud University Hospital', 'NGHA - Medina',
-     'King Saud Medical City', 'King Fahad University Hospital']
+# l = ['Prince Sultan Military Medical City', 'Security Forces Hospitals',
+#      'NGHA - Jeddah', 'King Abdulaziz Medical City- NGHA R',
+#      'Prince Sultan Cardiac Center',
+#      'King Salman Armed Forces Hospital',
+#      'KFSHRC-RUH:King Faisal Speciality', 'Jazan Health Affairs',
+#      'Alhada Armed Forces Hospital',
+#      'KFSHRC-JED : King Faisal Speciality',
+#      'King Fahad Hospital - Dammam', 'MODA/KFAFH - Jeddah',
+#      'King Fahad Medical City', 'King Fahad Military Medical Complex',
+#      'Jeddah Health Affairs', 'KING ABDULLAH MEDICAL CITY – MAKKAH',
+#      'King Saud University Hospital', 'NGHA - Medina',
+#      'King Saud Medical City', 'King Fahad University Hospital']
 
-
+l = ['مستشفى قوى الأمن بالرياض',
+     'مدينة الأمير سلطان الطبية العسكرية',
+     'مدينة الملك عبدالعزيز الطبية بجدة',
+     'مدينة الملك عبدالعزيز الطبية بالرياض',
+     'مركز الأمير سلطان لمعالجة أمراض وجراحة القلب',
+     'مستشفى الملك سلمان للقوات المسلحة',
+     'مستشفى القوات المسلحة بالهدا',
+     'مستشفى الملك فيصل التخصصي بالرياض',
+     'مديرية جازان',
+     'مستشفى الملك فيصل التخصصي بجدة',
+     'مستشفى الملك فهد التخصصي بالدمام',
+     'مستشفى الملك فهد للقوات المسلحة بجدة ',
+     'مدينة الملك فهد الطبية ',
+     'مجمع الملك فهد الطبي العسكري للقوات المسلحة بالظهران ',
+     'مديرية جدة',
+     'مدينة الملك عبدالله بالعاصمة المقدسة',
+     'المدينة الطبية بجامعة الملك سعود',
+     'مستشفى الامير محمد بن عبدالعزيز بالمدينة ',
+     'مدينة الملك سعود الطبية',
+     'مستشفى الملك فهد التعليمي بالخبر ']
 if page == "Introduction":  # write here introduction
 
     st.header("Health Entities Classification")
@@ -262,7 +281,7 @@ if page == "Introduction":  # write here introduction
 
 if page == "أعلى الجهات الصحية تصنيفاً":
     st.subheader("مستشفى قوى الأمن بالرياض")
-    st.subheader("TOP CUSTOMERS")
+
     for x in l:
         st.text("* "+x)
 
